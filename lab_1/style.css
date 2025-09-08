@@ -1,0 +1,71 @@
+body {
+  display: flex;
+  justify-content: center; 
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url('fonts/DelaGothicOne-Regular.ttf') format('truetype');
+}
+
+body {
+  font-family: 'MyFont', sans-serif;
+}
+
+main{
+    width: 650px;
+    height: 650px;
+    background-color: rgba(236, 236, 236, 0.514);
+    border: rgb(88, 88, 88) solid, 2px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    width: 400px;
+    padding-left: 20px;
+    height: 40px;
+    color: rgb(105, 105, 105);
+    border-radius: 40px;
+    background-color: rgba(234,238,247,1);
+    font-family: 'MyFont', sans-serif;
+    background-position: right 10px center; 
+    background-repeat: no-repeat;
+    background-size: 20px;
+    border:  none;
+}
+article{
+    display: flex;
+    flex-direction: column;
+}
+.result_field{
+     display: flex;
+    flex-direction: row-reverse;
+}
+
+p{
+    color: rgb(66, 66, 66);
+    font-family: 'MyFont', sans-serif;
+    font-size: 14px;
+    margin-left: 16px;
+    margin-bottom: 3px;
+}
+.submit{
+    font-weight: 700;
+    margin-top: 7px;
+    width: 150px;
+    height: 30px;
+    background-color: rgba(2,167,233,1);
+    border: none;
+    color: white;
+    border-radius: 13px;
+    &:active{
+        background-color:rgb(0, 134, 187);
+        box-shadow: 0 0 4px #383838;
+    }
+}
+#result{
+    border-radius: 10px;
+    display: flex; 
+    align-items: center; 
+}

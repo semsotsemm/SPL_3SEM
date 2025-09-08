@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лабораторная работа 1 СЯП</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <p>Введите имя преподавателя</p>
+        <input type="text" placeholder="Имя" id="fio" />
+        <div id="result"></div>
+        <div class="result_field">
+          <button class="submit" onclick="checkInput()">Проверить</button>
+        </div>
+      </article>
+      <article>
+        <p>Введите номер дня недели (массив)</p>
+        <input type="text" placeholder="День" id="day" />
+        <div id="resultday"></div>
+        <div class="result_field">
+          <button class="submit" onclick="checkDay()">Проверить</button>
+        </div>
+      </article>
+      <article>
+        <p>Введите номер дня недели (объект)</p>
+        <input type="text" placeholder="День" id="dayobj" />
+        <div id="resultdayobj"></div>
+        <div class="result_field">
+          <button class="submit" onclick="checkDayObj()">Проверить</button>
+        </div>
+      </article>
+      <article>
+        <p>Введите имя (функция с 3 параметрами)</p>
+        <input type="text" placeholder="Имя пользователя" id="userName" />
+        <div id="resultname"></div>
+        <div class="result_field">
+          <button class="submit" onclick="twoParams()">Проверить</button>
+        </div>
+      </article>
+      <article>
+        <p>Введите стороны четырех угольника (a,b)</p>
+        <input type="text" placeholder="Стороны" id="parms" />
+        <div id="resultparms"></div>
+        <div class="result_field">
+          <button class="submit" onclick="checkParams()">Проверить</button>
+        </div>
+      </article>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
