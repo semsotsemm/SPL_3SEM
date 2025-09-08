@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лабораторная работа 2 СЯП</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <article>
+        <p>Введите basicOperation (+,5,8)</p>
+        <input type="text" placeholder="basicOperation" id="operation" />
+        <div class="result_field">
+          <button class="submit" onclick="checkOperation()">Проверить</button>
+        </div>
+      </article>
+      <article>
+        <p>Введите число n</p>
+        <input type="text" placeholder="n" id="sumCube" />
+        <div class="result_field">
+          <button class="submit" onclick="checkSumCube()">Проверить</button>
+        </div>
+      </article>
+      <article>
+        <p>Введите список чисел через запятую (2,1,24)</p>
+        <input type="text" placeholder="Числа" id="arithmetic" />
+        <div class="result_field">
+          <button class="submit" onclick="checkArithmeticMean()">
+            Проверить
+          </button>
+        </div>
+      </article>
+      <article>
+        <p>Введите строку</p>
+        <input type="text" placeholder="Строка" id="userLine" />
+        <div class="result_field">
+          <button class="submit" onclick="turnOver()">Проверить</button>
+        </div>
+      </article>
+      <article>
+        <p>Введите строку s и число n в формате s,n</p>
+        <input type="text" placeholder="s,n" id="repeatLineInput" />
+        <div class="result_field">
+          <button class="submit" onclick="repeat()">Проверить</button>
+        </div>
+      </article>
+      <article id="two_arr">
+        <div id="arr1">
+          <p>Введите элементы arr2</p>
+          <input
+            type="text"
+            placeholder="element1,element2"
+            id="second_array"
+          />
+          <div class="result_field"></div>
+        </div>
+        <div id="arr2">
+          <p>Введите элементы arr1</p>
+          <input
+            type="text"
+            placeholder="element1,element2"
+            id="first_array"
+          />
+          <div class="result_field"></div>
+        </div>
+      </article>
+      <button class="submit" onclick="getUniqueItems()">Проверить</button>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
