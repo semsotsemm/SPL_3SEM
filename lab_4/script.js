@@ -1,6 +1,4 @@
-// Stubs and DOM bindings for JS implementation. You can fill logic later.
-
-// ===== Task 1: Products (Set) =====
+// 1
 const productsSet = new Set();
 const productsEls = {
   name: document.getElementById('productName'),
@@ -57,7 +55,7 @@ function renderProductsList() {
   }
 }
 
-// ===== Task 2: Students (Set of objects) =====
+// 2
 const studentsSet = new Set();
 const studentsEls = {
   id: document.getElementById('studentId'),
@@ -80,7 +78,6 @@ studentsEls.add?.addEventListener('click', () => {
     studentsEls.out.textContent = 'Заполните № зачётки, группу и ФИО.';
     return;
   }
-  // Ensure unique by id
   for (const s of studentsSet) {
     if (s.id === id) {
       studentsEls.out.textContent = `Студент с № «${id}» уже существует.`;
@@ -130,7 +127,7 @@ function renderStudentsTable(list = Array.from(studentsSet)) {
   }
 }
 
-// ===== Task 3: Cart/Storage (Map) =====
+// 3
 const cartMap = new Map();
 const cartEls = {
   id: document.getElementById('cartId'),
@@ -243,9 +240,9 @@ function renderCartTable() {
   cartEls.grandTotal.textContent = String(total);
 }
 
-// ===== Task 4: WeakMap cache =====
+// 4
 let computationCache = new WeakMap();
-const paramRegistry = new Map(); // value(string) -> stable object used as WeakMap key
+const paramRegistry = new Map();
 const cacheEls = {
   input: document.getElementById('cacheInput'),
   out: document.getElementById('cacheOutput'),
@@ -254,8 +251,6 @@ const cacheEls = {
 };
 
 function computeExpensive(objWithValue) {
-  // Example expensive calc: Fibonacci or some CPU-heavy task placeholder
-  // Here we just square the value after simulated delay logic you may add later
   const x = Number(objWithValue.value) || 0;
   return x * x;
 }
