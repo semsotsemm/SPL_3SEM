@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ЛР4: Коллекции Map, Set, WeakMap | JS Лабораторная</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="container page-header">
+      <h1>Лабораторная №4 — Коллекции и объекты в JS</h1>
+    </header>
+
+    <main class="container">
+      <section class="card" id="task1">
+        <h2>1) Список товаров (Set)</h2>
+        <p class="muted">Добавление, удаление, проверка наличия и подсчёт количества.</p>
+        <form class="grid" id="form-products" autocomplete="off">
+          <label class="field">
+            <span>Наименование товара</span>
+            <input type="text" id="productName" placeholder="Напр.: Хлеб" required />
+          </label>
+          <div class="actions">
+            <button type="button" id="btnAddProduct">Добавить</button>
+            <button type="button" id="btnRemoveProduct" class="secondary">Удалить</button>
+            <button type="button" id="btnHasProduct" class="ghost">Проверить наличие</button>
+            <button type="button" id="btnCountProducts" class="ghost">Количество</button>
+          </div>
+        </form>
+        <div class="output" id="productsOutput" aria-live="polite"></div>
+        <div class="list" id="productsList"></div>
+      </section>
+
+      <section class="card" id="task2">
+        <h2>2) Список студентов (Set объектов)</h2>
+        <p class="muted">Добавление, удаление по номеру, фильтрация по группе, сортировка по номеру зачётки.</p>
+        <form class="grid" id="form-students" autocomplete="off">
+          <label class="field">
+            <span>№ зачётки</span>
+            <input type="text" id="studentId" placeholder="Напр.: Z123" required />
+          </label>
+          <label class="field">
+            <span>Группа</span>
+            <input type="text" id="studentGroup" placeholder="Напр.: ИВТ-21" required />
+          </label>
+          <label class="field">
+            <span>ФИО</span>
+            <input type="text" id="studentName" placeholder="Фамилия Имя Отчество" required />
+          </label>
+          <div class="actions">
+            <button type="button" id="btnAddStudent">Добавить</button>
+            <button type="button" id="btnRemoveStudent" class="secondary">Удалить по №</button>
+            <label class="inline">
+              <span>Фильтр группа</span>
+              <input type="text" id="filterGroup" placeholder="Напр.: ИВТ-21" />
+            </label>
+            <button type="button" id="btnFilterStudents" class="ghost">Фильтровать</button>
+            <button type="button" id="btnSortStudents" class="ghost">Сортировать по №</button>
+          </div>
+        </form>
+        <div class="output" id="studentsOutput" aria-live="polite"></div>
+        <div class="table-scroll">
+          <table class="table" id="studentsTable">
+            <thead>
+              <tr>
+                <th>№ зачётки</th>
+                <th>Группа</th>
+                <th>ФИО</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" id="task3">
+        <h2>3) Хранилище товаров (Map)</h2>
+        <p class="muted">Добавление, удаление по id и по названию, изменение количества и цены. Подсчёт позиций и общей суммы.</p>
+        <form class="grid" id="form-cart" autocomplete="off">
+          <label class="field">
+            <span>ID</span>
+            <input type="text" id="cartId" placeholder="Уникальный id" required />
+          </label>
+          <label class="field">
+            <span>Название</span>
+            <input type="text" id="cartName" placeholder="Напр.: Молоко" required />
+          </label>
+          <label class="field">
+            <span>Количество</span>
+            <input type="number" id="cartQty" placeholder="1" min="0" step="1" required />
+          </label>
+          <label class="field">
+            <span>Цена</span>
+            <input type="number" id="cartPrice" placeholder="100" min="0" step="0.01" required />
+          </label>
+          <div class="actions">
+            <button type="button" id="btnAddCartItem">Добавить/Обновить</button>
+            <button type="button" id="btnRemoveById" class="secondary">Удалить по id</button>
+            <label class="inline">
+              <span>Удалить по названию</span>
+              <input type="text" id="removeByName" placeholder="Название" />
+            </label>
+            <button type="button" id="btnRemoveByName" class="secondary">Удалить названия</button>
+            <button type="button" id="btnChangeQty" class="ghost">Изм. количество</button>
+            <button type="button" id="btnChangePrice" class="ghost">Изм. цену</button>
+            <button type="button" id="btnCalcTotals" class="ghost">Итоги</button>
+          </div>
+        </form>
+        <div class="output" id="cartOutput" aria-live="polite"></div>
+        <div class="table-scroll">
+          <table class="table" id="cartTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Название</th>
+                <th>Кол-во</th>
+                <th>Цена</th>
+                <th>Сумма</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4" class="right">Позиций:</td>
+                <td id="positionsCount">0</td>
+              </tr>
+              <tr>
+                <td colspan="4" class="right">Итого:</td>
+                <td id="grandTotal">0</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <section class="card" id="task4">
+        <h2>4) Кеширование результатов (WeakMap)</h2>
+        <p class="muted">Функция вычисляет результат только при отсутствии записи в кеше, иначе — берём из WeakMap.</p>
+        <form class="grid" id="form-cache" autocomplete="off">
+          <label class="field">
+            <span>Входной параметр</span>
+            <input type="number" id="cacheInput" placeholder="Напр.: 25" />
+          </label>
+          <div class="actions">
+            <button type="button" id="btnCompute">Вычислить</button>
+            <button type="button" id="btnClearCache" class="secondary">Очистить кеш</button>
+          </div>
+        </form>
+        <div class="output" id="cacheOutput" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="container page-footer">
+      <small>© ЛР4 — JS: Set, Map, WeakMap. Подготовлено для разработки логики на JavaScript.</small>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+  </html>
+
+
