@@ -68,7 +68,7 @@ const studentsEls = {
   remove: document.getElementById('btnRemoveStudent'),
   filter: document.getElementById('btnFilterStudents'),
   sort: document.getElementById('btnSortStudents'),
-};
+};л
 
 studentsEls.add?.addEventListener('click', () => {
   const id = (studentsEls.id?.value || '').trim();

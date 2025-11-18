@@ -1,0 +1,128 @@
+h1{
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 26px;
+}
+
+body {
+  background-color: rgb(15, 23, 41);
+  position: relative;
+  z-index: 1; 
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.glass_block{
+  position: relative; 
+  z-index: 10;
+  display: block;
+  padding: 24px;
+  margin: 0 auto;         
+  width: min(900px, 92%);
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.06));
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 16px;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%; 
+  opacity: 0.5;
+  filter: blur(100px); 
+  z-index: -1; 
+}
+
+body::before {
+  width: 350px;
+  height: 350px;
+  top: -100px; 
+  left: 350px;
+  background: radial-gradient(circle, rgba(255, 159, 50, 0.9), rgba(100, 50, 255, 0) 70%); 
+}
+
+body::after {
+  width: 450px;
+  height: 450px;
+  bottom: -150px; 
+  right: 350px; 
+  background: radial-gradient(circle, rgba(184, 196, 25, 0.8), rgba(255, 165, 0, 0) 70%);
+}
+
+.tasks_grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.task_card{
+  display: grid;
+  grid-template-rows: auto auto auto 1fr; 
+  gap: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.06));
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 5px 25px rgba(0,0,0,0.25);
+  min-height: 300px;
+}
+
+.task_title{
+  color: #e8f0ff;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.task_desc{
+  margin: 0;
+  color: #c7d2fe;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.controls{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.run_btn{
+  appearance: none;
+  cursor: pointer;
+  padding: 8px 14px;
+  border-radius: 10px;
+  color: #d1fae5;
+  background: linear-gradient(180deg, rgba(34,197,94,0.12), rgba(34,197,94,0.10));
+  border: 1px solid rgba(34,197,94,0.45);
+  backdrop-filter: blur(6px);
+  transition: transform .08s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.run_btn:hover{
+  background: linear-gradient(180deg, rgba(34,197,94,0.18), rgba(34,197,94,0.14));
+  box-shadow: 0 6px 18px rgba(16,185,129,0.25);
+}
+
+.run_btn:active{
+  transform: translateY(1px);
+}
+
+.output{
+  margin: 0;
+  padding: 10px 12px;
+  min-height: 80px;
+  max-height: 200px;
+  overflow: auto;
+  color: #cbd5e1;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-left: 3px solid rgba(34,197,94,0.55);
+  border-radius: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+}

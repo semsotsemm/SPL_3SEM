@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лабораторная №6 — Деструктуризация</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero" id="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Лабораторная работа №6</p>
+          <h1>Деструктуризация, rest &amp; spread</h1>
+          <p class="lead">
+            Пять задач на применение деструктурирующего присваивания, остаточных
+            параметров и оператора расширения.
+          </p>
+        </div>
+        <div class="hero__badge">JS</div>
+      </header>
+
+      <main class="grid">
+        <section class="card">
+          <h2>Задачи</h2>
+          <ol class="tasks">
+            <li>Сохранить первый элемент массива numbers в переменную y.</li>
+            <li>
+              Создать объект admin на основе user с помощью spread-оператора.
+            </li>
+            <li>
+              Выполнить глубокую деструктуризацию store, вывести likesCount,
+              отфильтровать dialogs и заменить сообщения в messages.
+            </li>
+            <li>
+              Добавить новую задачу в массив tasks, используя spread-оператор.
+            </li>
+            <li>
+              Передать массив [1, 2, 3] в функцию sumValues с помощью spread.
+            </li>
+          </ol>
+        </section>
+
+        <section class="card card--accent">
+          <h2>Результаты выполнения</h2>
+          <div class="results">
+            <article class="task-output">
+              <header class="task-output__header">
+                <p class="task-badge">Задача 1</p>
+                <h3>Деструктуризация массива</h3>
+                <p>
+                  Введи минимум три числа через запятую — первый элемент попадёт
+                  в переменную <code>y</code>, остальные соберём через rest.
+                </p>
+              </header>
+              <label class="field">
+                <span>Числа</span>
+                <input
+                  id="numbersInput"
+                  type="text"
+                  value="42, 77, 13"
+                  placeholder="например: 10, 22, 35"
+                  autocomplete="off"
+                />
+              </label>
+              <div class="result-box">
+                <p id="task1Main"></p>
+                <p id="task1Rest"></p>
+              </div>
+            </article>
+
+            <article class="task-output">
+              <header class="task-output__header">
+                <p class="task-badge">Задача 2</p>
+                <h3>Создание admin через spread</h3>
+                <p>
+                  Выбери пользователя и смотри, как формируется объект
+                  <code>admin</code> без дополнительных кнопок.
+                </p>
+              </header>
+              <label class="field">
+                <span>Профиль пользователя</span>
+                <select id="userPreset">
+                  <option value="alice" selected>Алиса (25, дизайнер)</option>
+                  <option value="leo">Лев (31, разработчик)</option>
+                  <option value="mira">Мира (22, тьютор)</option>
+                </select>
+              </label>
+              <div class="result-box">
+                <p id="task2User"></p>
+                <p id="task2Admin"></p>
+              </div>
+            </article>
+
+            <article class="task-output">
+              <header class="task-output__header">
+                <p class="task-badge">Задача 3</p>
+                <h3>Глубокая деструктуризация store</h3>
+                <p>
+                  Три уровня вложенности: достаём <code>posts</code>,
+                  <code>dialogs</code>, <code>messages</code> и строку
+                  <code>newPostText</code>.
+                </p>
+              </header>
+              <div class="result-box">
+                <p id="task3Likes"></p>
+                <p id="task3Dialogs"></p>
+                <p id="task3Messages"></p>
+                <p id="task3NewPost"></p>
+              </div>
+            </article>
+
+            <article class="task-output">
+              <header class="task-output__header">
+                <p class="task-badge">Задача 4</p>
+                <h3>Собственный список задач</h3>
+                <p>
+                  Печатай задачу и жми Enter. Меняй приоритет простым
+                  перетаскиванием карточек — порядок и есть приоритет.
+                </p>
+              </header>
+              <label class="field">
+                <span>Новая задача</span>
+                <input
+                  id="taskInput"
+                  type="text"
+                  placeholder="Например: Повторить теорию"
+                  autocomplete="off"
+                />
+              </label>
+              <ul id="taskBoard" class="task-board"></ul>
+            </article>
+
+            <article class="task-output">
+              <header class="task-output__header">
+                <p class="task-badge">Задача 5</p>
+                <h3>Передаём массив в sumValues</h3>
+                <p>
+                  Измени значения ползунками — массив автоматически развернётся
+                  в параметры функции.
+                </p>
+              </header>
+              <div class="sum-grid">
+                <label class="field">
+                  <span>Первое значение</span>
+                  <input
+                    type="range"
+                    min="-10"
+                    max="10"
+                    value="1"
+                    data-sum-input
+                  />
+                </label>
+                <label class="field">
+                  <span>Второе значение</span>
+                  <input
+                    type="range"
+                    min="-10"
+                    max="10"
+                    value="2"
+                    data-sum-input
+                  />
+                </label>
+                <label class="field">
+                  <span>Третье значение</span>
+                  <input
+                    type="range"
+                    min="-10"
+                    max="10"
+                    value="3"
+                    data-sum-input
+                  />
+                </label>
+              </div>
+              <div class="result-box">
+                <p id="sumSpread"></p>
+                <p id="sumResult"></p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>Выполнено в рамках лабораторной работы по JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
