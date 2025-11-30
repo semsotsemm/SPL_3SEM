@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Лабораторная работа №9 — ООП в JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+
+  <div class="container">
+    <header class="header-glass">
+      <div class="header-content">
+        <div class="lab-badge">Лабораторная №9</div>
+        <h1>ООП в функциональном и прототипном стиле</h1>
+        <p class="subtitle">
+          Прототипное наследование. F.prototype. Встроенные прототипы. Методы прототипов. Классы. Наследование классов.
+          Статические свойства и методы. Приватные и защищённые методы и свойства. Расширение встроенных классов.
+        </p>
+      </div>
+    </header>
+
+    <main class="tasks-wrapper">
+
+      <section class="task-card glass">
+        <div class="task-header">
+          <span class="task-num">01</span>
+          <h3>Прототипное наследование фигур</h3>
+        </div>
+
+        <div class="card__header">
+          <span class="card__tag">Object &amp; prototype</span>
+        </div>
+        <p class="card__text">
+          Создайте объекты фигур и реализуйте прототипное наследование.
+          Используя методы JS, получите:
+        </p>
+        <ul class="card__list">
+          <li>свойства, которые отличают фигуру «зелёный круг»;</li>
+          <li>свойства, описывающие фигуру «треугольник с тремя линиями»;</li>
+          <li>информацию, есть ли у «маленького квадрата» собственное свойство цвета.</li>
+        </ul>
+
+        <div class="card__grid card__grid--2">
+          <div class="panel">
+            <h3 class="panel__title">Управление</h3>
+            <div class="panel__controls">
+              <button id="btn-create-shapes" class="btn-primary">
+                Создать объекты фигур
+              </button>
+              <button id="btn-green-circle-props" class="btn-primary btn-primary--ghost">
+                Свойства «зелёного круга»
+              </button>
+              <button id="btn-triangle-props" class="btn-primary btn-primary--ghost">
+                Свойства «треугольника с тремя линиями»
+              </button>
+              <button id="btn-small-square-color" class="btn-primary btn-primary--ghost">
+                Проверить цвет «маленького квадрата»
+              </button>
+              <button id="btn-reset-task1" class="btn-primary btn-primary--secondary">
+                Очистить результат
+              </button>
+            </div>
+          </div>
+
+          <div class="panel panel--output">
+            <div class="panel__header">
+              <h3 class="panel__title">Результат</h3>
+              <span class="panel__hint">Выводится из JS</span>
+            </div>
+            <pre id="output-task1" class="output-area result" aria-live="polite"></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="task-card glass-accent">
+        <div class="task-header">
+          <span class="task-num accent">02</span>
+          <h3>Классы Human, Student, Faculty</h3>
+        </div>
+        <div class="card__header">
+          <span class="card__tag">ES6 классы</span>
+        </div>
+        <p class="card__text">
+          Реализуйте иерархию классов <code>Human</code>,
+          <code>Student</code> и <code>Faculty</code> согласно условию.
+        </p>
+
+        <div class="tabs" data-tabs>
+          <div class="tabs__nav">
+            <button class="tabs__btn tabs__btn--active" data-tab-target="human" type="button">
+              Human
+            </button>
+            <button class="tabs__btn" data-tab-target="student" type="button">
+              Student
+            </button>
+            <button class="tabs__btn" data-tab-target="faculty" type="button">
+              Faculty
+            </button>
+          </div>
+
+          <div class="tabs__content">
+            <!-- Tab: Human -->
+            <div class="tabs__pane tabs__pane--active" data-tab-pane="human">
+              <form class="form" id="form-human" autocomplete="off">
+                <div class="form__row">
+                  <label class="field">
+                    <span class="field__label">Имя</span>
+                    <input type="text" class="field__input" id="human-firstname" placeholder="Иван" />
+                  </label>
+                  <label class="field">
+                    <span class="field__label">Фамилия</span>
+                    <input type="text" class="field__input" id="human-lastname" placeholder="Иванов" />
+                  </label>
+                </div>
+                <div class="form__row">
+                  <label class="field">
+                    <span class="field__label">Год рождения</span>
+                    <input type="number" class="field__input" id="human-birthyear" placeholder="2004" />
+                  </label>
+                  <label class="field field--wide">
+                    <span class="field__label">Адрес</span>
+                    <input type="text" class="field__input" id="human-address"
+                      placeholder="г. Минск, ул. Примерная, д. 1" />
+                  </label>
+                </div>
+
+                <div class="form__actions">
+                  <button type="button" id="btn-create-human" class="btn-primary">
+                    Создать Human
+                  </button>
+                  <button type="button" id="btn-update-human-age" class="btn-primary btn-primary--ghost">
+                    Изменить возраст (через сеттер)
+                  </button>
+                  <button type="button" id="btn-update-human-address" class="btn-primary btn-primary--ghost">
+                    Изменить адрес
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="tabs__pane" data-tab-pane="student">
+              <form class="form" id="form-student" autocomplete="off">
+                <div class="form__row">
+                  <label class="field">
+                    <span class="field__label">Имя</span>
+                    <input type="text" class="field__input" id="student-firstname" placeholder="Анна" />
+                  </label>
+                  <label class="field">
+                    <span class="field__label">Фамилия</span>
+                    <input type="text" class="field__input" id="student-lastname" placeholder="Петрова" />
+                  </label>
+                </div>
+
+                <div class="form__row">
+                  <label class="field">
+                    <span class="field__label">Год рождения</span>
+                    <input type="number" class="field__input" id="student-birthyear" placeholder="2005" />
+                  </label>
+                  <label class="field">
+                    <span class="field__label">Адрес</span>
+                    <input type="text" class="field__input" id="student-address"
+                      placeholder="г. Минск, ул. Студенческая, д. 10" />
+                  </label>
+                </div>
+
+                <div class="form__row">
+                  <label class="field">
+                    <span class="field__label">Факультет</span>
+                    <input type="text" class="field__input" id="student-faculty" placeholder="ФИТ" />
+                  </label>
+                  <label class="field">
+                    <span class="field__label">Курс</span>
+                    <input type="number" class="field__input" id="student-course" placeholder="1" min="1" max="6" />
+                  </label>
+                  <label class="field">
+                    <span class="field__label">Группа</span>
+                    <input type="text" class="field__input" id="student-group" placeholder="120902" />
+                  </label>
+                </div>
+
+                <div class="form__row">
+                  <label class="field field--wide">
+                    <span class="field__label">№ зачётки</span>
+                    <input type="text" class="field__input" id="student-id" placeholder="71201300" />
+                  </label>
+                </div>
+
+                <div class="form__actions">
+                  <button type="button" id="btn-create-student" class="btn-primary">
+                    Создать Student
+                  </button>
+                  <button type="button" id="btn-update-student-course-group" class="btn-primary btn-primary--ghost">
+                    Изменить курс и группу
+                  </button>
+                  <button type="button" id="btn-student-fullname" class="btn-primary btn-primary--ghost">
+                    getFullName()
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Tab: Faculty -->
+            <div class="tabs__pane" data-tab-pane="faculty">
+              <form class="form" id="form-faculty" autocomplete="off">
+                <div class="form__row">
+                  <label class="field field--wide">
+                    <span class="field__label">Название факультета</span>
+                    <input type="text" class="field__input" id="faculty-name"
+                      placeholder="Факультет информационных технологий (ФИТ)" />
+                  </label>
+                </div>
+                <div class="form__row">
+                  <label class="field">
+                    <span class="field__label">Количество групп</span>
+                    <input type="number" class="field__input" id="faculty-groups" placeholder="10" min="0" />
+                  </label>
+                  <label class="field">
+                    <span class="field__label">Количество студентов</span>
+                    <input type="number" class="field__input" id="faculty-students" placeholder="250" min="0" />
+                  </label>
+                </div>
+
+                <div class="form__row">
+                  <label class="field field--wide">
+                    <span class="field__label">
+                      Список номеров зачёток студентов факультета
+                    </span>
+                    <textarea id="faculty-student-ids" class="field__input field__input--textarea"
+                      placeholder="71201300, 71202457, 63201345 ..."></textarea>
+                    <span class="field__note">
+                      Можно использовать для демонстрации методов
+                      <code>getDev()</code> и <code>getGroupe()</code>.
+                    </span>
+                  </label>
+                </div>
+
+                <div class="form__row">
+                  <label class="field">
+                    <span class="field__label">Группа для поиска</span>
+                    <input type="text" class="field__input" id="faculty-search-group" placeholder="например, 120902" />
+                  </label>
+                </div>
+
+                <div class="form__actions">
+                  <button type="button" id="btn-create-faculty" class="btn-accent">
+                    Создать Faculty
+                  </button>
+                  <button type="button" id="btn-update-faculty-counts" class="btn-primary btn-primary--ghost">
+                    Изменить количество групп и студентов
+                  </button>
+                  <button type="button" id="btn-faculty-get-dev" class="btn-primary btn-primary--ghost">
+                    getDev() — ДЭВИ
+                  </button>
+                  <button type="button" id="btn-faculty-get-group" class="btn-primary btn-primary--ghost">
+                    getGroupe() — Студенты группы
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="panel panel--output panel--stacked">
+            <div class="panel__header">
+              <h3 class="panel__title">Результат работы классов</h3>
+              <span class="panel__hint">Выводится из JS</span>
+            </div>
+            <pre id="output-task2" class="output-area result" aria-live="polite"></pre>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
