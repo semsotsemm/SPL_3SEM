@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ЛР №7 — Методы объектов и контекст вызова</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Лабораторная работа №7</p>
+        <h1>Методы объектов и контекст вызова</h1>
+        <p class="description">
+          Методы объектов, <code>this</code>. Создание объектов через <code>new</code>. Флаги и дескрипторы свойств. Геттеры и сеттеры. 
+        </p>
+        <a class="cta" href="#tasks">Перейти к заданиям</a>
+      </div>
+      <div class="hero__accent">
+        <span>this</span>
+        <span>new</span>
+        <span>getter</span>
+        <span>setter</span>
+      </div>
+    </header>
+
+    <main id="tasks" class="tasks">
+      
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 1</div>
+          <h2>Объект <code>person</code> с методами</h2>
+        </div>
+        <p>
+          Создать объект с методами <code>greet</code> и
+          <code>ageAfterYears</code>, которые используют <code>this</code>.
+        </p>
+          <input type="text" id="user_name" placeholder="Введите свое имя" class="code-hint">
+          <input type="text" id="user_age" placeholder="Введите свой возраст" class="code-hint">
+        <div class="action-row">
+          <button class="run-btn" data-task="task1">Выполнить код</button>
+          <button class="reset-btn" data-reset="task1">Сбросить</button>
+        </div>
+        <pre class="result" id="task1-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 2</div>
+          <h2>Объект <code>car</code> с методом <code>getInfo</code></h2>
+        </div>
+        <p>Создать объект <code>car</code>, имеющий свойства <code>model</code> и <code>year</code> и метод <code>getInfo</code>.</p>
+          <input type="text" id="car_model" placeholder="Введите модель машины" class="code-hint">
+          <input type="text" id="year_of_manufacture" placeholder="Введите год выпуска" class="code-hint">
+        <div class="action-row">
+          <button class="run-btn" data-task="task2">Выполнить код</button>
+          <button class="reset-btn" data-reset="task2">Сбросить</button>
+        </div>
+        <pre class="result" id="task2-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 3</div>
+          <h2>Функция-конструктор для объекта <code>Book</code></h2>
+        </div>
+        <p>
+          Реализовать конструктор для объекта Book с методами <code>getTitle</code> и
+          <code>getAuthor</code>.
+        </p>
+          <input type="text" id="book_author" placeholder="Введите автора книги" class="code-hint">
+          <input type="text" id="book_title" placeholder="Введите название книги" class="code-hint">
+        <div class="action-row">
+          <button class="run-btn" data-task="task3">Выполнить код</button>
+          <button class="reset-btn" data-reset="task3">Сбросить</button>
+        </div>
+        <pre class="result" id="task3-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 4</div>
+          <h2>Объект <code>team</code> и вложенный <code>this</code></h2>
+        </div>
+        <p>
+          Реализовать объект с массивом игроков и метод getMembers.
+        </p>
+          <input type="text" id="member_name" placeholder="Введите имя участника" class="code-hint" style="height:35px;">
+          <input type="text" id="member_age" placeholder="Введите возраст участника" class="code-hint" style="height:35px;">
+        <div class="action-row">
+          <button class="add-btn" data-task="task4" style="height:30px;">Добавить</button>
+          <button class="remove-btn" data-task="task4" style="height:30px;">Информация</button>
+          <button class="reset-btn" data-reset="task4" style="height:30px;">Очистить поле вывода</button>
+        </div>
+        <pre class="result" id="task4-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 5</div>
+          <h2>Модуль <code>counter</code></h2>
+        </div>
+        <p>
+          Создать модуль <code>counter</code>, который инкапсуриует <code>count</code> и добавить методы
+          <code>increment</code>, <code>decrement</code> и
+          <code>getCount</code>.
+        </p>
+        <div class="action-row">
+          
+          <button class="add_counter-btn" data-task="task5" style="height:30px;">+</button>
+          <button class="remove_counter-btn" data-task="task5" style="height:30px;">-</button>
+          <button class="get_counter-btn" data-reset="task5">Текущее значение</button>
+        </div>
+        <pre class="result" id="task5-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 6</div>
+          <h2>Дескрипторы для <code>item.price</code></h2>
+        </div>
+        <p>
+          Сначала задай свойство изменяемым, затем переопредели дескрипторы,
+          чтобы сделать его постоянным.
+        </p>
+          <input type="text" id="new_price" placeholder="Введите новую цену" class="code-hint">
+        <div class="action-row">
+          <button class="change-btn" data-task="task6" style="height:30px;">Изменить</button>
+          <button class="fix-btn" data-task="task6" style="height:30px;">Зафиксировать</button>
+          <button class="reset-btn" data-reset="task6" style="height:30px;">Очистить поле вывода</button>
+        </div>
+        <pre class="result" id="task6-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 7</div>
+          <h2>Объект <code>circle</code> с геттерами/сеттером</h2>
+        </div>
+        <p>Создать объект <code>circle</code>, с полями <code>radius</code> и <code>area</code>, методом для подсчета площади круга, геттер, сеттер</p>
+          <input type="text" id="circle_radius" placeholder="Введите радиус круга" class="code-hint">
+        <div class="action-row">
+          <button class="run-btn" data-task="task7">Выполнить код</button>
+          <button class="reset-btn" data-reset="task7">Сбросить</button>
+        </div>
+        <pre class="result" id="task7-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 8</div>
+          <h2>Объект <code>car</code> с неизменяемыми свойствами</h2>
+        </div>
+        <p>Сначала свойства редактируемые, затем фиксируй их дескрипторами.</p>
+          <input type="text" id="car_make" placeholder="Введите марку машины" class="code-hint">
+          <input type="text" id="car_model2" placeholder="Введите модель машины" class="code-hint">
+          <input type="text" id="car_year" placeholder="Введите год выпуска" class="code-hint">
+        <div class="action-row">
+          <button class="change-btn" data-task="task8" style="height:30px;">Изменить</button>
+          <button class="fix-btn" data-task="task8" style="height:30px;">Зафиксировать</button>
+          <button class="reset-btn" data-reset="task8" style="height:30px;">Очистить поле вывода</button>
+        </div>
+        <pre class="result" id="task8-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 9</div>
+          <h2>Массив с геттером <code>sum</code></h2>
+        </div>
+        <p>Добавь свойство, которое возвращает сумму чисел и нельзя менять.</p>
+        <div class="action-row">
+          <button class="run-btn" data-task="task9">Выполнить код</button>
+          <button class="reset-btn" data-reset="task9">Сбросить</button>
+        </div>
+        <pre class="result" id="task9-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 10</div>
+          <h2><code>rectangle</code> с геттерами/сеттером</h2>
+        </div>
+        <p>Вычисли площадь и управляй шириной и высотой через аксессоры.</p>
+          <input type="text" id="rectangle_width" placeholder="Введите ширину" class="code-hint">
+          <input type="text" id="rectangle_height" placeholder="Введите высоту" class="code-hint">
+        <div class="action-row">
+          <button class="run-btn" data-task="task10">Выполнить код</button>
+          <button class="reset-btn" data-reset="task10">Сбросить</button>
+        </div>
+        <pre class="result" id="task10-output">Жду результат...</pre>
+      </section>
+
+      <section class="task-card">
+        <div class="task-card__header">
+          <div class="badge">Задание 11</div>
+          <h2>Объект <code>user</code> с полным именем</h2>
+        </div>
+        <p>Получить <code>firstName</code> и <code>lastName</code> и преобразовать в fullname.</p>
+          <input type="text" id="user_firstname" placeholder="Введите свое имя" class="code-hint">
+          <input type="text" id="user_lastname" placeholder="Введите свою фамилию" class="code-hint">
+        <div class="action-row">
+          <button class="run-btn" data-task="task11">Выполнить код</button>
+          <button class="reset-btn" data-reset="task11">Сбросить</button>
+        </div>
+        <pre class="result" id="task11-output">Жду результат...</pre>
+      </section>
+    </main>
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
