@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 12,14 - Судоку</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Судоку</h1>
+    <div class="game-container">
+        <div id="board" class="sudoku-board"></div>
+
+        <div class="controls">
+            <button onclick="handleNewGame()">Новая игра</button>
+            <button class="secondary" onclick="handleSolve()">Решить</button>
+            <button class="check-btn" onclick="handleCheck()">Проверить</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>

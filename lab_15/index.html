@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторная работа 15 - Валидация формы</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="form-container">
+    <h3>Заполните форму:</h3>
+    <form id="mainForm">
+        <div class="row">
+            <div class="label">Фамилия</div>
+            <div class="input-group">
+                <input type="text" id="surname">
+                <div id="error-surname" class="error-msg">Поле не должно быть пустым и содержать более 20 символов (только буквы)!</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label">Имя</div>
+            <div class="input-group">
+                <input type="text" id="firstname">
+                <div id="error-firstname" class="error-msg">Поле не должно быть пустым и содержать более 20 символов (только буквы)!</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label">E-mail</div>
+            <div class="input-group">
+                <input type="text" id="email">
+                <div id="error-email" class="error-msg">Недопустимый формат (ххх@xxxxx.xxx)!</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label">Телефон <small>(0xx)xxx-xx-xx</small></div>
+            <div class="input-group">
+                <input type="text" id="phone">
+                <div id="error-phone" class="error-msg">Поле не должно быть пустым и соответствовать формату (0xx)xxx-xx-xx!</div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label">Город</div>
+            <div class="input-group">
+                <select id="city">
+                    <option value="Брест">Брест</option>
+                    <option value="Минск">Минск</option>
+                    <option value="Гродно">Гродно</option>
+                    <option value="Гомель">Гомель</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label">Я учусь в БГТУ</div>
+            <div class="input-group">
+                <input type="checkbox" id="isBSTU">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label">На каком курсе Вы учитесь?</div>
+            <div class="input-group radio-group">
+                <label><input type="radio" name="course" value="1"> 1</label>
+                <label><input type="radio" name="course" value="2"> 2</label>
+                <label><input type="radio" name="course" value="3"> 3</label>
+                <label><input type="radio" name="course" value="4"> 4</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="label">Расскажите о себе</div>
+            <div class="input-group">
+                <textarea id="about"></textarea>
+                <div id="error-about" class="error-msg">Поле обязательно (макс. 250 символов)!</div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-check">Проверить</button>
+    </form>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
